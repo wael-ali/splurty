@@ -5,7 +5,7 @@
   clear:both;
 }
 .my_headline_font_size{
-  font-size: 24px
+  font-size: 75px
 }
 .circle {
     font-weight:bold;
@@ -42,7 +42,7 @@ padding-top: 26px;
 a {
   color: black;
   font-size:25px;
-  border-bottom: 1px solid #dfdfdf;
+  border-bottom: 2px solid #dfdfdf;
   font-family: "kaushan_scriptregular" , sans-serif;
 
 }
@@ -52,6 +52,7 @@ header{
 }
 hr{
   clear:both;
+
 }
 h1{
   font-family: "kaushan_scriptregular", sans-serif;
@@ -62,8 +63,10 @@ h1{
 h2{
   font-family: "kaushan_scriptregular", sans-serif;
   
-
-
 }
 
-
+.next-quote{
+  color: pink;
+  font-family: 'kaushan_scriptregular', sans-serif;
+  font-size: 20px;
+}

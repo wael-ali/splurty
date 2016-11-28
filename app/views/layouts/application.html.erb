@@ -38,6 +38,23 @@
   </header>
   <hr/>
   <br class="clear" />
+
+  <div class="container">
     <%= yield %>
+   </div>
+
+
+   <div class="footer">
+      <div class="container">
+          <div class="col-xs-6">
+             <%= link_to "This isn't enough, I need more","#", class: 'next-quote' %>
+          </div>
+
+          <div class="col-xs-6">
+            Humbly from Hamburg, MA by WAEL <a href="http://thefirehoseproject.com">Marco &amp; Ken </a><br> Want to build your own splurty Web app- <a href="http://thefirehoseproject.com">Learn how to code here</a>
+          </div>
+      </div>
+   </div>
+
   </body>
   </html>
