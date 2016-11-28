@@ -33,7 +33,9 @@ font-style: italic;
 padding-top: 26px;
 }
 
-.links  {padding-top: 26px;
+.links  {
+  padding-top: 26px;
+
 } 
 
 
@@ -41,11 +43,27 @@ a {
   color: black;
   font-size:25px;
   border-bottom: 1px solid #dfdfdf;
+  font-family: "kaushan_scriptregular" , sans-serif;
 
 }
+
 header{
   border-top: 9px solid #222222;
 }
 hr{
   clear:both;
 }
+h1{
+  font-family: "kaushan_scriptregular", sans-serif;
+  font-weight: bold; 
+  
+  
+}
+h2{
+  font-family: "kaushan_scriptregular", sans-serif;
+  
+
+
+}
+
+
