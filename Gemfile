@@ -11,6 +11,7 @@ gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 # bootstrap-sass ++++++++++++++
 gem 'bootstrap-sass','~>3.3.5.1'
+gem 'simple_form'
 #sprockets
 gem 'sprockets','3.7.0'
 # Use Uglifier as compressor for JavaScript assets
