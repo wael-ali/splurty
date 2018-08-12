@@ -14,7 +14,7 @@ gem 'bootstrap-sass','~>3.3.5.1'
 # gem 'bootstrap', '~> 4.1.3'
 gem 'simple_form'
 #sprockets
-gem 'sprockets','~> 3.7.0'
+gem 'sprockets','~> 3.7.2'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
