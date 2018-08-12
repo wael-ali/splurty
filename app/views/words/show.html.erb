@@ -1,0 +1,24 @@
+<h1><%= @word.name %></h1>
+
+<div class="card col-xs-8">
+  <div class="card-header">
+    <%= @word.sourc_language %><=><%= @word.target_language %>
+  </div>
+  <div class="card-body">
+    <div class="card-title">
+        <h5 class=""></h5> <h3 class=""><%= @word.equivalent %></h3>
+    </div>
+    <p class="card-text"> <h6></h6>Here is some example expected</p>
+  </div>
+  <div class="card-footer text-muted">
+    <%= link_to 'Edit', edit_word_path(@word), class: 'btn btn-primary'%>
+
+    <%= link_to 'Destroy', word_path(@word),
+              method: :delete,
+              data: { confirm: 'Are you sure?' },
+              class: 'btn btn-danger' %>
+    <div class="right btn btn-default">
+      <%= @word.created_at.to_formatted_s(:long)%>
+    </div>
+  </div>
+</div>

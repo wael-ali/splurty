@@ -13,41 +13,35 @@
 
   <body>
   <header>
-  <div class="col-xs-3">
-      <%= link_to root_path, class:'logo' do %>
-        <div class="circle">
-        <br />
-        You know
-        <br />
-        you need
-        <br />
-        to code
-        </div>
-      <% end %>
-  </div>
+    <div class="col-xs-3">
+        <%= link_to root_path, class:'logo' do %>
+          <div class="circle">
+          <br />
+          kartei
+          <br />
+          ...
+          <br />
+          karte
+          </div>
+        <% end %>
+    </div>
 
-  <div class="col-sm-4 hidden-xs slogan">
-    Splurting out unsolicited advice about entrepreneurship since 2016
-  </div>
+    <div class="col-sm-4 hidden-xs slogan">
+      Splurting out unsolicited advice about entrepreneurship since 2016
+    </div>
 
-  <div class="col-xs-8 col-xs-offset-1 col-sm-offset-0 col-sm-5 links ">
-  
+    <div class="col-xs-8 col-xs-offset-1 col-sm-offset-0 col-sm-5 links ">
 
+  <!-- Button trigger modal -->
+    <%= link_to 'Contribute', '#', data: {toggle: 'modal', target: '#myModal'} %>
+        &nbsp;&nbsp;
+    <%= link_to 'About', about_path %>
+    </div>
 
-<!-- Button trigger modal -->
-
-      <%= link_to 'Contribute', '#', data: {toggle: 'modal', target: '#myModal'} %>
-
-      &nbsp;&nbsp;
-
-
-  <%= link_to 'About', about_path %>  
-  </div>
-    
   </header>
 
 
-  
+
 
   <!-- Modal -->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -60,43 +54,35 @@
         <div class="modal-body">
 
         <%= simple_form_for Quote.new do |f| %>
-
-  <%= f.input :saying, label: "what is the saying you want to add ?", placeholder: "Fear is the disease, Hustle is the antidote." %>
-  <br>
-  <br>
-  <%= f.input :auther, label: "Who is the auther of the Quote ?", placeholder: "Travis Kalanik" %>
-  <br>
-  <%= f.submit 'Add Quote', class:'btn btn-danger'  %>
-
-<%end%>
-          
-
-
+          <%= f.input :saying, label: "what is the saying you want to add ?", placeholder: "Fear is the disease, Hustle is the antidote." %>
+          <br>
+          <br>
+          <%= f.input :auther, label: "Who is the auther of the Quote ?", placeholder: "Travis Kalanik" %>
+          <br>
+          <%= f.submit 'Add Quote', class:'btn btn-danger'  %>
+        <%end%>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          
         </div>
       </div>
     </div>
   </div>
-
-
 
   <hr/>
 
   <br class="clear" />
 
   <div class="container">
-
-    <% if flash[:error].present? %> 
-      <div class="col-xs-10 col-xs-offset-1 alert alert-danger"> 
+    <% if flash[:error].present? %>
+      <div class="col-xs-10 col-xs-offset-1 alert alert-danger">
           <%= flash[:error].html_safe %>
       </div>
     <%end%>
 
     <%= yield %>
    </div>
+
 
 
    <div class="footer">
@@ -108,7 +94,7 @@
           <div class="col-xs-12 col-sm-6 footer-blurb">
             Humbly from Hamburg, MA by WAEL <br>
             Want to build your own splurty Web app<br>
-            <a href="http://thefirehoseproject.com">Learn how to code here</a>
+
           </div>
       </div>
    </div>

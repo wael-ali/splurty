@@ -11,9 +11,10 @@ gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 # bootstrap-sass ++++++++++++++
 gem 'bootstrap-sass','~>3.3.5.1'
+# gem 'bootstrap', '~> 4.1.3'
 gem 'simple_form'
 #sprockets
-gem 'sprockets','3.7.0'
+gem 'sprockets','~> 3.7.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -53,4 +54,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # adding the rails 12factor gem
 gem 'rails_12factor', group: :production
-#adding gem thor 0.19.1 instead 0.19.2 
+#adding gem thor 0.19.1 instead 0.19.2

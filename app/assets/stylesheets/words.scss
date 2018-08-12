@@ -1,3 +1,36 @@
 // Place all the styles related to the words controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.card {
+  min-width: 350px;
+  max-width: 100%;
+  border: 1px solid blue;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px 5px;
+  text-align: center;
+}
+
+.card-header {
+  margin: 0;
+  width: 100%;
+  min-height: 40px;
+  max-height: 70px;
+  padding: 8px 30px;
+  background-color: rgba(43, 118, 239, 0.3);
+  border-bottom: 1px solid rgb(43, 118, 239);
+  border-left: 5px solid rgb(239, 92, 42);
+  border-radius: 10px;
+
+}
+ .left {
+   float: left;
+   display: inline-block;
+   text-align: left;
+ }
+ .right {
+   float: right;
+   display: inline-block;
+   text-align: right;
+ }

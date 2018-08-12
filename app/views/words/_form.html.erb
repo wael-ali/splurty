@@ -1,0 +1,11 @@
+
+
+<%= simple_form_for @word do |f| %>
+<div class="form-group">
+  <%= f.input :name, label: 'Entry', class: 'form-group' %>
+  <%= f.input :equivalent, class: 'form-group' %>
+  <%= f.input :sourc_language, :collection => %w[English German Arabic] %>
+  <%= f.input :target_language, :collection => %w[English German Arabic] %>
+</div>
+  <%= f.button 'submit' , class: 'btn btn-primary'%>
+<% end %>
