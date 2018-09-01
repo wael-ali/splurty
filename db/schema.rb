@@ -15,23 +15,23 @@ ActiveRecord::Schema.define(version: 20180812114929) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "quotes", force: :cascade do |t|
-    t.string   "saying"
-    t.string   "auther"
+  create_table "quotes", id: :serial, force: :cascade do |t|
+    t.string "saying"
+    t.string "auther"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "source"
+    t.string "source"
   end
 
-  create_table "words", force: :cascade do |t|
-    t.string   "name"
-    t.string   "equivalent"
-    t.string   "sourc_language"
-    t.string   "target_language"
-    t.string   "state"
-    t.string   "scope"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+  create_table "words", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.string "equivalent"
+    t.string "sourc_language"
+    t.string "target_language"
+    t.string "state"
+    t.string "scope"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
