@@ -1,6 +1,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+body {
+  background-color: rgba(235, 243, 242, 0.993);
+}
 .clear{
   clear:both;
 }
@@ -12,7 +16,7 @@
     font-style: italic;
     position: relative;
     border-radius: 100%;
-    background: green;
+    background-color: rgb(21, 189, 180);
     border: 1px solid #F7F7F7;
     width: 80px;
     height: 80px;
@@ -26,8 +30,8 @@
     -ms-transform:rotate(11deg); /* IE 9 */
     -webkit-transform:rotate(11deg); /* Opera, Chrome, and Safari */
 }
-.slogan{
-  
+
+.slogan{ 
 font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
 font-style: italic;
 padding-top: 26px;
@@ -35,20 +39,20 @@ padding-top: 26px;
 
 .links  {
   padding-top: 26px;
-
 } 
 
-
+/*
 a {
   color: black;
   font-size:25px;
   border-bottom: 2px solid #dfdfdf;
   font-family: "kaushan_scriptregular" , sans-serif;
-
 }
+*/
 
 header{
   border-top: 9px solid #222222;
+  border-bottom: 1px solid #fff;
 }
 hr{
   clear:both;

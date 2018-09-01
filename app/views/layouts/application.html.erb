@@ -1,49 +1,18 @@
-  <!DOCTYPE html>
-  <html>
-  <head>
-    <title>Splurty</title>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Splurty</title>
 
-    <%= csrf_meta_tags %>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-
-
-  </head>
-
-  <body>
-  <header>
-    <div class="col-xs-3">
-        <%= link_to root_path, class:'logo' do %>
-          <div class="circle">
-          <br />
-          kartei
-          <br />
-          ...
-          <br />
-          karte
-          </div>
-        <% end %>
-    </div>
-
-    <div class="col-sm-4 hidden-xs slogan">
-      Splurting out unsolicited advice about entrepreneurship since 2016
-    </div>
-
-    <div class="col-xs-8 col-xs-offset-1 col-sm-offset-0 col-sm-5 links ">
-
-  <!-- Button trigger modal -->
-    <%= link_to 'Contribute', '#', data: {toggle: 'modal', target: '#myModal'} %>
-        &nbsp;&nbsp;
-    <%= link_to 'About', about_path %>
-    <%= link_to 'new word', new_word_path %>
-    </div>
-
-  </header>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
 
+</head>
 
-
+<body>
+    <%= render "layouts/header2"%>
   <!-- Modal -->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -83,24 +52,8 @@
     <%end%>
 
     <%= yield %>
-   </div>
+  </div>
 
-
-
-   <div class="footer">
-      <div class="container">
-          <div class="col-xs-12 col-sm-6">
-             <%= link_to "This isn't enough, I need more",root_path, class: 'next-quote' %>
-          </div>
-
-          <div class="col-xs-12 col-sm-6 footer-blurb">
-            Humbly from Hamburg, MA by WAEL <br>
-            Want to build your own splurty Web app<br>
-
-          </div>
-      </div>
-   </div>
-
-
-  </body>
-  </html>
+    <%= render 'layouts/footer'%>
+</body>
+</html>
