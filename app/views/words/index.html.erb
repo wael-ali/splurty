@@ -1,55 +1,30 @@
-<div class="">
-  <h3> All Words</h3>
-  <%= link_to 'NEW', new_word_path, class: 'btn btn-primary'%>
+<div class="row">
+    <%= link_to '+', new_word_path, class: 'btn btn-primary pull-right'%>
 </div>
 
-<% @words.each do |word| %>
-
-<div class="card col-xs-12">
-  <div class="card-header col-xs-12">
-    <div class="col-xs-4">
-      <%= word.sourc_language %>
-    </div>
-    <div class="col-xs-4">
-      <=>
-    </div>
-    <div class="col-xs-4">
-      <%= word.target_language %>
-    </div>
-  </div>
-
-  <div class="card-header col-xs-12">
-    <div class="col-xs-6">
-      <%= word.name %>
-    </div>
-
-    <div class="col-xs-6">
-      <%= word.equivalent %>
-    </div>
-  </div>
-
-
-
-  <div class="card-body col-xs-12">
-    <div class="card-title">
-        <h5 class=""></h5> <h3 class=""></h3>
-    </div>
-    <p class="card-text"> <h6></h6>Here is some example expected</p>
-  </div>
-  <div class="card-footer text-muted col-xs-12">
-    <div class="col-xs-6 left">
-      <%= link_to 'Edit', edit_word_path(word), class: 'btn btn-primary'%>
-
-      <%= link_to 'Destroy', word_path(word),
-                method: :delete,
-                data: { confirm: 'Are you sure?' },
-                class: 'btn btn-danger' %>
-    </div>
-
-    <div class="right  col-xs-6">
-      <%= word.created_at.to_formatted_s(:long)%>
-    </div>
-  </div>
-</div>
-
-<% end %>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>word</th>
+        <th>Meaning</th>
+        <th>Handle</th>
+      </tr>
+    </thead>
+    <tbody class="table-hover">
+      <%
+        id = 0
+        @words.each do |word|
+        id += 1
+      %>
+        <tr>
+          <th><%= id %></th>
+          <td><%= word.name%></td>
+          <td><%= word.equivalent %></td>
+          <td>
+              <%= link_to "", edit_word_path(word) , class: "glyphicon glyphicon-edit"%>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
