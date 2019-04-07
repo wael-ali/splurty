@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Splurty</title>
-
-  <%= csrf_meta_tags %>
-
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-
-
+  <title>Words-Book</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </head>
 
 <body>
     <%= render "layouts/header2"%>
   <!-- Modal -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <%= render "layouts/modal"%>
+  <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -37,14 +34,12 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <hr/>
-
   <br class="clear" />
 
   <div class="container">
-
     <% if flash[:error].present? %>
       <div class="col-xs-10 col-xs-offset-1 alert alert-danger">
           <%= flash[:error].html_safe %>
@@ -53,7 +48,6 @@
 
     <%= yield %>
   </div>
-
     <%= render 'layouts/footer'%>
 </body>
 </html>
