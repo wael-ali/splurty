@@ -1,0 +1,9 @@
+
+
+<%= simple_form_for @code do |f| %>
+<div class="form-group">
+  <%= f.input :description, label: 'desccription', class: 'form-group' %>
+  <%= f.input :code, class: 'form-group' %>
+</div>
+  <%= f.button 'submit' ,  class: 'btn btn-primary'%>
+<% end %>
