@@ -15,7 +15,7 @@ class QuotesController < ApplicationController
     redirect_to root_path
   end
 
-  def about
+  def home
 
   end
 

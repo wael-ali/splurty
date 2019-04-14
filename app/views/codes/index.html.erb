@@ -13,6 +13,7 @@
     </thead>
     <tbody class="table-hover">
       <%
+        if @codes
         id = 0
         @codes.each do |code|
         id += 1
@@ -36,6 +37,9 @@
               class: ' glyphicon glyphicon-remove-circle ' %>
           </td>
         </tr>
-      <% end %>
+      <% 
+          end
+        end
+      %>
     </tbody>
   </table>

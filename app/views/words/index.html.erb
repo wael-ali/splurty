@@ -13,6 +13,7 @@
     </thead>
     <tbody class="table-hover">
       <%
+        if @words
         id = 0
         @words.each do |word|
         id += 1
@@ -25,6 +26,9 @@
               <%= link_to "", edit_word_path(word) , class: "glyphicon glyphicon-edit"%>
           </td>
         </tr>
-      <% end %>
+      <%
+          end
+        end 
+      %>
     </tbody>
   </table>
