@@ -1,5 +1,5 @@
 
-window.onclick = e => {
+window.onclick = function(e) {
     var radioBox = e.target.parentNode.parentNode.parentNode.parentNode;
     var infoColumn = e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.firstElementChild;
     var codeBlock = e.target.parentNode.parentNode.parentNode.parentNode.parentNode;
