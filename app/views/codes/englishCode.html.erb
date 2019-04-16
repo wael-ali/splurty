@@ -1,0 +1,58 @@
+<div class="englishCode_custom">
+  <div>
+    <%
+      if @codes
+      id = 0
+      @codes.each do |code|
+      id += 1
+    %>
+      <div class="row js-container">
+        <div class="col-md-6 hide js-info-col">   
+          <%= code.description%>
+          <p>
+            some information and comments.
+            some information and comments.
+            some information and comments.
+            some information and comments.
+            some information and comments.
+            
+          </p>
+        </div>
+
+        <div class="col-md-12 js-code-col">
+          <div>
+            <h3>
+              Description of Why is bad code.
+            </h3>
+          </div>
+          <pre>
+            <code class="language-css">
+              <%= code.code %>
+            </code>
+          </pre>
+
+          <div class="js-goodbad-radio">
+            <h4>
+              Is it Good Code or Bad one?
+            </h4>
+            <div class="row">
+              <form>
+                <div class="col-lg-6">
+                  <input class="js-good" type="radio" name="<%= code.id%>" value="1"> Good<br>
+                </div><!-- /.col-lg-6 -->
+                <div class="col-lg-6">
+                  <input class="js-bad" type="radio" name=" <%= code.id%>" value="1"> Bad<br>
+                </div><!-- /.col-lg-6 -->
+              </form>
+            </div><!-- /.row -->
+          </div>
+          
+        </div>
+      </div>
+      <hr/>
+    <% 
+        end
+      end
+    %>
+  </div>
+</div>

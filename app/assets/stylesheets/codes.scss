@@ -1,3 +1,15 @@
 // Place all the styles related to the Codes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.hide{
+    display: none;
+}
+.mycontainer{
+    margin: 100px auto;
+}
+.js-container{
+    padding: 10px;
+}
+.js-container:hover {
+    background-color: antiquewhite;
+}

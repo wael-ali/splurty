@@ -1,5 +1,8 @@
 class CodesController < ApplicationController
 
+  def englishCode
+    @codes = Code.order(created_at: :desc)
+  end
 
   def index
     @codes = Code.order(created_at: :desc)

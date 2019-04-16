@@ -1,0 +1,86 @@
+    <div class="container">
+        <div id="editor">
+            <h1>{{ greet }}</h1>
+            <button v-on:click="showalert">Greet</button>
+            <li v-for="item in words">
+                {{ item.name }}
+            </li>
+        </div>
+    </div>
+
+
+
+    <div id="id01"></div>
+
+    <script>
+        var xmlhttp = new XMLHttpRequest();
+        var url = "http://splurty-wael-ali.herokuapp.com/api/words";
+
+        xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var myArr = JSON.parse(this.responseText);
+            // console.log(myArr);
+            myFunction(myArr);
+        }
+        };
+        xmlhttp.open("GET", url, true);
+        xmlhttp.send();
+
+        function myFunction(arr) {
+            var out = "";
+            var listElement = document.getElementById("id01");
+            var i;
+            for(i = 0; i < arr.length; i++) {
+                out +=  arr[i];
+            }
+        }
+        function insertAfter(newNode, referenceNode) {
+            referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+        }
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+
+    <script>
+
+        new Vue({
+            el: '#editor',
+            data: {
+                input: '# hello',
+                greet: 'welcome!!',
+                words: this.getWords()
+            },
+            computed: {
+
+            },
+            methods: {
+                showalert(){
+                    alert('button clicked!');
+                },
+                // refreshMessage() {
+                //     this.$http.get('http://splurty-wael-ali.herokuapp.com/api/words').then((response) => {
+                //         this.words = response.data;
+                //     });
+                // },
+                getWords(){
+                    var xmlhttp = new XMLHttpRequest();
+                    var url = "http://splurty-wael-ali.herokuapp.com/api/words";
+                    var data = [];
+                    xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        var myArr = JSON.parse(this.responseText);
+                        return myArr;
+                    }
+                    };
+                    xmlhttp.open("GET", url, true);
+                    xmlhttp.send();
+                }
+            }
+            })
+    </script>
