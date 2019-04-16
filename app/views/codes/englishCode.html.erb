@@ -1,5 +1,10 @@
 <div class="englishCode_custom">
-  <div>
+  <div class="overlay" id="js-overlay">
+    <span class="js-welcome">
+      click to continue!!
+    </span>
+  </div>
+  <div class="js-start">
     <%
       if @codes
       id = 0
@@ -11,7 +16,7 @@
              <h4> 
           <%= code.description%>
             </h4>
-          <p>
+          <div>
             <% if code.info %>
               <%= markdown(code.info)%>
             <% else %>
@@ -22,7 +27,7 @@
               some information and comments.
             <% end %>
             
-          </p>
+          </div>
         </div>
 
         <div class="col-md-12 js-code-col js-<%= code.good %>">
@@ -44,10 +49,10 @@
             <div class="row">
               <form>
                 <div class="col-lg-6">
-                  <input class="js-true" type="radio" name="<%= code.id%>" value="1"> Good<br>
+                  <input class="js-true" type="radio" name="<%= code.id%>" value="good"> Good<br>
                 </div><!-- /.col-lg-6 -->
                 <div class="col-lg-6">
-                  <input class="js-false" type="radio" name=" <%= code.id%>" value="1"> Bad<br>
+                  <input class="js-false" type="radio" name=" <%= code.id%>" value="pad"> Bad<br>
                 </div><!-- /.col-lg-6 -->
               </form>
             </div><!-- /.row -->

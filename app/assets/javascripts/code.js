@@ -7,6 +7,9 @@ window.onclick = function(e) {
 
     console.log(codeBlock);
     console.log(codeBlock.tagName);
+    if(e.target.classList.contains("js-welcome")){
+        document.getElementById('js-overlay').classList.add('hide');
+    }
     if(radioBox.classList.contains("js-goodbad-radio")){
         hideElement(radioBox);
         codeBlock.classList.remove("col-md-12");
