@@ -38,7 +38,7 @@ class CodesController < ApplicationController
   private
 
   def code_params
-    params.require(:code).permit(:code, :description)
+    params.require(:code).permit(:code, :description, :example_for, :info, :go_publish, :good)
   end
 
   def get_word

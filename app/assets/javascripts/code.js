@@ -1,13 +1,3 @@
-// document.addEventListener('click', function(e) {
-//     e = e || window.event;
-//     var target = e.target || e.srcElement,
-//         text = target.textContent || target.innerText;   
-// }, false);
-
-// Window.onclick = e => {
-//     console.log(e.target);
-//     console.log(e.target.tagName);
-// }
 
 window.onclick = e => {
     var radioBox = e.target.parentNode.parentNode.parentNode.parentNode;
@@ -21,12 +11,19 @@ window.onclick = e => {
         hideElement(radioBox);
         codeBlock.classList.remove("col-md-12");
         codeBlock.classList.add("col-md-6");
+        if (codeBlock.classList.contains('js-true') === e.target.classList.contains("js-true")){
+            codeBlock.lastElementChild.innerHTML = "Right Answer!!";
+            codeBlock.lastElementChild.classList.add("alert", "alert-success");
+        }else{
+            codeBlock.lastElementChild.innerHTML = "Wronge Answer!!";
+            codeBlock.lastElementChild.classList.add("alert", "alert-danger");
+        }
+        codeBlock.lastElementChild.classList.remove("hide");
     }
 
     if(infoColumn.classList.contains("js-info-col")){
         showElement(infoColumn);
     }
-
 } 
 
 document.getElementsByClassName("js-bad");
@@ -37,5 +34,3 @@ function hideElement(el){
 function showElement(el){
     el.classList.remove("hide");
 }
-
-

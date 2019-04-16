@@ -8,18 +8,24 @@
     %>
       <div class="row js-container">
         <div class="col-md-6 hide js-info-col">   
+             <h4> 
           <%= code.description%>
+            </h4>
           <p>
-            some information and comments.
-            some information and comments.
-            some information and comments.
-            some information and comments.
-            some information and comments.
+            <% if code.info %>
+              <%= code.info%>
+            <% else %>
+              some information and comments.
+              some information and comments.
+              some information and comments.
+              some information and comments.
+              some information and comments.
+            <% end %>
             
           </p>
         </div>
 
-        <div class="col-md-12 js-code-col">
+        <div class="col-md-12 js-code-col js-<%= code.good %>">
           <div>
             <h3>
               Description of Why is bad code.
@@ -33,18 +39,22 @@
 
           <div class="js-goodbad-radio">
             <h4>
-              Is it Good Code or Bad one?
+              Is it a Good <%= code.example_for %> or Bad one?
             </h4>
             <div class="row">
               <form>
                 <div class="col-lg-6">
-                  <input class="js-good" type="radio" name="<%= code.id%>" value="1"> Good<br>
+                  <input class="js-true" type="radio" name="<%= code.id%>" value="1"> Good<br>
                 </div><!-- /.col-lg-6 -->
                 <div class="col-lg-6">
-                  <input class="js-bad" type="radio" name=" <%= code.id%>" value="1"> Bad<br>
+                  <input class="js-false" type="radio" name=" <%= code.id%>" value="1"> Bad<br>
                 </div><!-- /.col-lg-6 -->
               </form>
             </div><!-- /.row -->
+          </div>
+
+          <div class="js-answer hide">
+              You are right!
           </div>
           
         </div>
