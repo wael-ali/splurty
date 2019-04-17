@@ -2,17 +2,26 @@
 <%= simple_form_for @info do |f| %>
     <div class="form-group">
         <%= f.input :title, label: 'Info Title', class: 'form-group' %>
-    <%= f.fields_for :subinfo do |subinfo_form| %>
-        <div class="">
-            <div class="col-md-2"></div>
-            <div class="col-md-10 form-group">
-                <%= subinfo_form.input :title, label: 'subinfo Title', class: 'form-group' %>
-                <%= subinfo_form.label :_destroy, "Remove Subinfo title", class: 'form-group'  %>
-                <%= subinfo_form.check_box :_destroy, class: 'form-group' %>
-            </div >
-        </div>
-    <% end %>
-    <p>
-        <%= f.submit 'Update info' %>
+        <%= f.fields_for :subinfos do |subinfo_form| %>
+            <div class="col-md-12 subtitle">
+                <div class=""></div>
+                <div class="col-md-10 form-group">
+                    <%= subinfo_form.input :title, label: 'subinfo Title', class: 'form-group' %>
+                    <%= subinfo_form.label :_destroy, "Remove Subinfo title", class: 'form-group'  %>
+                    <%= subinfo_form.check_box :_destroy, class: 'form-group' %>
+                </div >
+            </div>
+            <%= subinfo_form.fields_for :listitems do |listitem| %>
+            <div class="col-md-6 list">
+                <div class="col-md-2"></div>
+                <div class="col-md-10 form-group">
+                    <%= listitem.input :content, label: 'listitem content', class: 'form-group' %>
+                    <%= listitem.label :_destroy, "Remove Subinfo title", class: 'form-group'  %>
+                    <%= listitem.check_box :_destroy, class: 'form-group' %>
+                </div >
+            </div>
+            <% end %>
+        <% end %>
     </div>
+    <%= f.submit 'Update info', class: 'btn btn-default'%>
 <% end %>

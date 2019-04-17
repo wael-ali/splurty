@@ -6,7 +6,10 @@ class InfosController < ApplicationController
 
   def new
     @info = Info.new
-    @subinfo = @info.subinfos.build
+    3.times {
+      @subinfo = @info.subinfos.build
+      6.times {@listitem = @subinfo.listitems.build}
+    }
   end
 
   def show
@@ -40,6 +43,11 @@ class InfosController < ApplicationController
   private
 
   def info_params
-    params.require(:info).permit(:title, subinfo_attributes: [:title, :text, :img_position, :imgurl, :_destroy])
+    params.require(:info).permit(:title, 
+      subinfos_attributes: [
+        :id, :title, :text, :img_position, :imgurl, :_destroy, 
+        listitems_attributes: [:id, :content, :_destroy]
+      ]
+    )
   end
 end

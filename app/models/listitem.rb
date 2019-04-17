@@ -1,3 +1,3 @@
 class Listitem < ApplicationRecord
-  belongs_to :subinfo
+  belongs_to :subinfo, inverse_of: :listitems
 end
