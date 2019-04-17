@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :quotes
   resources :codes
-  resources :info_blocks
+  resources :infos
   get 'english/standup', to: 'codes#englishCode'
   
   get 'api/words', to: 'api#words'

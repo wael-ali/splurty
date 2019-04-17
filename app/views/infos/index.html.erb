@@ -1,0 +1,29 @@
+
+<div class="row">
+    <%= link_to '+', new_info_path, title: "Add new Item", class: 'btn btn-primary pull-right'%>
+</div>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Handle</th>
+    </tr>
+  </thead>
+  <tbody class="table-hover">
+    <%
+      if @infos
+      id = 0
+      @infos.each do |info|
+      id += 1
+    %>
+      <tr>
+        <td><%= id %></td>
+        <td><%= info.title %></td>
+      </tr>
+    <% end 
+       end %>
+
+
+  </tbody>
+</table></table>
