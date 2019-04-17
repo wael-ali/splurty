@@ -1,6 +1,10 @@
 <%= simple_form_for @info do |f| %>
 <div class="form-group">
   <%= f.input :title, label: 'Info Title', class: 'form-group' %>
+  <!-- Nested subinfo form -->
+  <%= f.fields_for :subinfo do |subinfo_form| %>
+      subinfo: <%= subinfo_form.input :title %>
+  <% end %>
 </div>
   <%= f.button 'submit' ,  class: 'btn btn-primary'%>
 <% end %>

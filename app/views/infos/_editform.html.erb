@@ -1,0 +1,16 @@
+<h1>Edit info</h1>
+<%= form_for @info do |f| %>
+  <p>
+    Info Title: <%= f.text_field :title %>
+  </p>
+  <%= f.fields_for :subinfos do |subinfo_form| %>
+    <p>
+      subinfo: <%= subinfo_form.text_field :title %>
+      <%= subinfo_form.check_box :_destroy %>
+      <%= subinfo_form.label :_destroy, "Remove Task" %>
+    </p>
+  <% end %>
+  <p>
+    <%= f.submit 'Update info' %>
+  </p>
+<% end %>

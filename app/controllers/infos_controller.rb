@@ -8,6 +8,10 @@ class InfosController < ApplicationController
     @info = Info.new
   end
 
+  def show
+    @info = Info.find(params[:id])
+  end
+
   def create
     @info = Info.new(info_params)
     if @info.save
@@ -19,9 +23,22 @@ class InfosController < ApplicationController
     end
   end
 
+  def edit
+    @info = Info.find(params[:id])
+  end
+
+  def update
+    @info = Info.find(params[:id])  
+    if @info.update_attributes(info_params)
+      redirect_to @info, notice: 'Successfully updated info'
+    else
+      render :edit
+    end
+  end
+
   private
 
   def info_params
-    params.require(:info).permit(:title)
+    params.require(:info).permit(:title, Subinfos_attributes: [:title, :text, :img_position, :imgurl, :_destroy])
   end
 end

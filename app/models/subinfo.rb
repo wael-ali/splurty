@@ -1,4 +1,4 @@
 class Subinfo < ApplicationRecord
-  belongs_to :info
+  belongs_to :info, inverse_of:  :subinfos
   has_many :listitems
 end

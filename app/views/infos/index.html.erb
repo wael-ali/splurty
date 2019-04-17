@@ -6,8 +6,10 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Description</th>
-      <th>Handle</th>
+      <th>id</th>
+      <th>Info Title</th>
+      <th>Subtitles</th>
+      <th>Edit</th>
     </tr>
   </thead>
   <tbody class="table-hover">
@@ -20,6 +22,12 @@
       <tr>
         <td><%= id %></td>
         <td><%= info.title %></td>
+        <td>
+          <%  info.subinfos.each do |subinfo| %>
+          <%= subinfo.title %>
+          <% end %>
+        </td>
+        <td><%= link_to '', edit_info_path(info), class: "glyphicon glyphicon-edit" %></td>
       </tr>
     <% end 
        end %>
