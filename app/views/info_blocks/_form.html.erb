@@ -1,0 +1,15 @@
+<%= simple_form_for @code do |f| %>
+<div class="form-group">
+  <%= f.input :description, label: 'desccription', class: 'form-group' %>
+  <%= f.input :code, class: 'form-group' %>
+
+  <%= f.label :example_for, label: 'Is this ?', class: 'form-group' %>
+  <%= f.select :example_for, options_for_select(['code', 'comment']) ,class: 'form-group' %>
+
+  <%= f.label :good, label: ' Good!?', class: 'form-group' %>
+  <%= f.select :good, options_for_select([['Yes', true], ['No', false]]) ,   class: 'form-group' %>
+
+  <%= f.input :info, label: ' more info', class: 'form-group' %>
+</div>
+  <%= f.button 'submit' ,  class: 'btn btn-primary'%>
+<% end %>

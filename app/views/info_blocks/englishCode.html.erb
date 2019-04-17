@@ -1,0 +1,73 @@
+<div class="englishCode_custom">
+  <div class="overlay" id="js-overlay">
+    <span class="js-welcome">
+      click to continue!!
+    </span>
+  </div>
+  <div class="js-start">
+    <%
+      if @codes
+      id = 0
+      @codes.each do |code|
+      id += 1
+    %>
+      <div class="row js-container">
+        <div class="col-md-6 hide js-info-col">   
+             <h4> 
+          <%= code.description%>
+            </h4>
+          <div>
+            <% if code.info %>
+              <%= markdown(code.info)%>
+            <% else %>
+              some information and comments.
+              some information and comments.
+              some information and comments.
+              some information and comments.
+              some information and comments.
+            <% end %>
+            
+          </div>
+        </div>
+
+        <div class="col-md-12 js-code-col js-<%= code.good %>">
+          <div>
+            <h3>
+              <%= code.description%>
+            </h3>
+          </div>
+          <pre>
+            <code class="language-css">
+              <%= code.code %>
+            </code>
+          </pre>
+
+          <div class="js-goodbad-radio">
+            <h4>
+              Is it a Good <%= code.example_for %> or Bad one?
+            </h4>
+            <div class="row">
+              <form>
+                <div class="col-lg-6">
+                  <input class="js-true" type="radio" name="<%= code.id%>" value="good"> Good<br>
+                </div><!-- /.col-lg-6 -->
+                <div class="col-lg-6">
+                  <input class="js-false" type="radio" name=" <%= code.id%>" value="pad"> Bad<br>
+                </div><!-- /.col-lg-6 -->
+              </form>
+            </div><!-- /.row -->
+          </div>
+
+          <div class="js-answer hide">
+              You are right!
+          </div>
+          
+        </div>
+      </div>
+      <hr/>
+    <% 
+        end
+      end
+    %>
+  </div>
+</div>
