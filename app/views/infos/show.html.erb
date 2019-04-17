@@ -1,5 +1,5 @@
 <h1></h1>
 <%= @info.title %>
-<% for subinfo in @info.subinfos %>
-<%= subinfo.title %>
+<%  @info.subinfos.each do |subinfo| %>
+  <%= subinfo.title %>
 <% end %>
