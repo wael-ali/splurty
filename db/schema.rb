@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190417164342) do
+ActiveRecord::Schema.define(version: 20190417165034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,17 @@ ActiveRecord::Schema.define(version: 20190417164342) do
     t.string "source"
   end
 
+  create_table "subinfos", force: :cascade do |t|
+    t.bigint "info_id"
+    t.string "title"
+    t.text "text"
+    t.string "imgurl"
+    t.string "img_position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["info_id"], name: "index_subinfos_on_info_id"
+  end
+
   create_table "words", id: :serial, force: :cascade do |t|
     t.string "name"
     t.string "equivalent"
@@ -51,4 +62,5 @@ ActiveRecord::Schema.define(version: 20190417164342) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "subinfos", "infos"
 end
