@@ -3,6 +3,11 @@ class InfosController < ApplicationController
   def index
     @infos = Info.all
   end
+  def info_list
+    @list = Info.all.includes(:subinfos)
+    # render json: {status: 'SUCCESS', message: 'Loaded Infos', data: infos}, status: :ok
+    render json: @list.to_json(:include => [:subinfos])
+  end
 
   def new
     @info = Info.new
